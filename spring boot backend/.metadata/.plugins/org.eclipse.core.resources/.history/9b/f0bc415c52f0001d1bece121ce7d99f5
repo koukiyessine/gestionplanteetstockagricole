@@ -1,0 +1,87 @@
+package tn.gestionplanteetstock.spring.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//import tn.gestionplanteetstock.spring.Entities.Plante;
+import tn.gestionplanteetstock.spring.Entities.Produit;
+import tn.gestionplanteetstock.spring.Repository.ProduitRepository;
+
+
+@Service
+public class ProduitService  implements IProduitService {
+
+@Autowired	
+ProduitRepository prodrep;
+
+
+
+
+
+
+
+@Override
+public Produit addProduit(Produit p  ) {
+	// TODO Auto-generated method stub
+	return prodrep.save(p);
+}
+
+/*
+@Override
+public String addProduitbyexistance(Produit p) {
+	// TODO Auto-generated method stub
+	
+	String ch="";
+	if(prodrep.existsBynomproduit(p.getNomproduit()) && prodrep.existsByreferenceproduit(p.getReferenceproduit()) && 
+			prodrep.existsByquantitealerte(p.getQuantitealerte())&& prodrep.existsByquantitetotal(p.getQuantitetotal())) {
+		ch="les champs suivante already existe dans bd !!";
+	}
+	else
+	{
+		prodrep.save(p);
+		ch="les champs suivante already  ajouter dans bd !!";
+	}
+	
+	return ch;
+}
+
+*/
+@Override
+public Produit updateProduit(Produit p, Long idproduit) {
+	// TODO Auto-generated method stub
+	
+       Produit pr = prodrep.findById(idproduit).get();   
+       
+       pr.setIdproduit(p.getIdproduit());
+       pr.setReferenceproduit(p.getReferenceproduit());
+       pr.setQuantitetotal(p.getQuantitetotal());
+       pr.setQuantitealerte(p.getQuantitealerte());
+       pr.setNumtelephonefournisseur(p.getNumtelephonefournisseur());
+       pr.setImg(p.getImg());
+        prodrep.save(pr);
+    
+    return pr;
+}
+
+@Override
+public void deleteproduit(Long idproduit) {
+	// TODO Auto-generated method stub	
+	prodrep.deleteById(idproduit);
+	
+}
+
+
+
+/*
+@Override
+public Produit addfournisseurproduit(Produit p, Long idfournisseur) {
+	// TODO Auto-generated method stub
+	fournisseur fo=fourrep.findById(idfournisseur).get();
+	p.setFournisseur(fo);
+	
+	return prodrep.save(p);  
+}
+
+*/
+
+}

@@ -1,0 +1,376 @@
+github ferjani
+
+navbar.js:
+
+import React, { useState } from "react";
+import "./Navbar.css";
+import { Menuitems } from "./Menuitems";
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
+  return (
+    <nav className="navbar-items">
+      <h1 className="navbar-logo">
+        <img src="./image/download.png" alt="farm" />
+      </h1>
+
+      <div className="menu-icons" onClick={handleClick}>
+        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+      </div>
+
+      <ul className={clicked ? "navbar-menu active" : "navbar-menu"}>
+        {Menuitems.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link className={item.cName} to={item.url} >
+                <i className={item.icon}></i>
+                {item.title}
+              </Link>
+            </li>
+          );
+        })}
+
+             <button>Sign Up</button>
+      </ul>       
+    </nav>
+  );
+}
+
+export default Navbar;
+
+
+navbar.css:
+
+
+.navbar-items{
+    background-color: #fff;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow:0px 5px 15px 0px rgba(0, 0, 0, 25);
+    width: 93%;
+    height: 15%;
+    border-radius: 13px;
+    position: fixed;
+    top: 20px;
+    left: 80%;
+    transform: translate(-82%);
+    opacity:0.8;
+
+}
+
+
+
+
+.navbar-logo img {
+    width: 65px;
+    cursor: pointer;
+
+    }
+
+.navbar-menu{
+ display: grid;
+ grid-template-columns: repeat(6, auto);
+  grid-gap: 10px; 
+ list-style: none;
+ align-items: center;
+}
+
+.nav-links{
+ text-decoration: none;
+ color:#222;
+ font-size: 1.2rem;
+ font-weight:600;
+ padding: 0.7rem 1rem;
+ white-space: nowrap;
+}
+
+.nav-links i{
+ padding-right: 10px; 
+
+}
+
+.nav-links:hover{
+ background-color: #01959a;
+ color:#fff;
+ border-radius:4px;
+ transition: all 0.2s ease-in-out;
+
+}
+
+
+.nav-links-mobile{
+    display: none;
+}
+
+button{
+
+padding: 0.5rem 1rem;
+white-space: nowrap;
+border-radius:0.3rem;
+font-size: 1rem;
+font-weight: 300;
+border:none;
+cursor: pointer;
+transition:  0.2s ease-in-out;
+}
+
+button:hover{
+    background-color: #151516;
+    color:#fff;
+}  
+
+
+.menu-icons{
+ display: none;
+
+
+}
+
+
+
+
+
+@media screen  and (max-width: 850px){
+
+.Navbar-items
+{
+   z-index: 99; 
+}
+    .navbar-menu{
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       background: #fff;
+       width: 100%;
+       height: auto;
+       position: absolute;
+       top : 50px;
+       left: -100%;  
+       opacity: 0;
+       align-items: stretch;
+       padding: 80px 0 5px 0;
+       margin: 10px;
+       z-index: -1;
+       transition: 0.3s ease-in-out;
+
+       }
+    
+       .navbar-menu.active{
+        left: 0;
+        opacity: 1;
+        z-index: -1;
+        transition: 0.3s ease-in-out;
+       }
+
+        
+
+       .nav-links{
+        display:block;
+        width:100%;
+        font-size: 1.2rem;
+        padding: 2rem 0;
+       }
+
+       .nav-links:hover{
+        background: #01959a;
+        transition: none;
+        }
+
+        button{
+            display: none;
+        }
+
+      
+         
+        .nav-links-mobile {
+           display: block;
+           text-align: center;
+           padding: 1rem;
+           margin: 1px 2px 1px  130px;
+           border-radius: 8px;
+           width: 70%;
+           background: #01959a;
+           text-decoration: none;
+           color: #fff;
+           font-size: 1.2rem;
+           font-weight:700;
+           letter-spacing: 2px;
+
+        }
+
+        .menu-icons{
+            display:block;
+           
+        }
+
+        .menu-icons i{
+            font-size: 1.2rem;
+            color:#222;
+        }
+
+}
+
+
+
+menuitems.js 
+
+
+
+export const Menuitems =[
+
+{  
+ title : "Home",
+ url : "/",
+ cName : "nav-links",
+ icon  : "fa-solid fa-house-user"
+},
+
+{  
+    title : "About",
+    url : "/about",
+    cName : "nav-links",
+    icon  : "fa-solid fa-circle-info"
+   },
+
+   {  
+    title : "Service",
+    url : "/service",
+    cName : "nav-links",
+    icon  : "fa-solid fa-briefcase"
+   },
+
+   {  
+    title : "Contact",
+    url : "/contact",
+    cName : "nav-links",
+    icon  : "fa-solid fa-address-book"
+   },
+
+   {  
+    title : "Sign Up",
+    url : "/signup",
+    cName : "nav-links-mobile",
+  
+   },
+
+
+
+
+
+ <div className="container contact-form">
+      <div className="contact-image">
+      <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+      </div>
+      <form method="post">
+        <h3>Rapport</h3>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="form-group">
+              <input
+                type="text"
+                name="Nom de plante"
+                className="form-control"
+                placeholder="Nom de plante"
+                value=""
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="etat de sante"
+                className="form-control"
+                placeholder="etat de sante "
+                value=""
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="type de sol"
+                className="form-control"
+                placeholder="type de sol "
+                value=""
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="niveaueau ph"
+                className="form-control"
+                placeholder="niveau d'eau ph "
+                value=""
+              />
+            </div>
+
+            <div className="form-group">
+              <input
+                type="text"
+                name="humidite"
+                className="form-control"
+                placeholder="humidite ° "
+                value=""
+              />
+            </div>
+
+            <div className="form-group">
+              <input
+                type="text"
+                name="temperature"
+                className="form-control"
+                placeholder="temperature ° "
+                value=""
+              />
+            </div>
+
+
+            <div className="form-group">
+              <input
+                type="date"
+                name="temperature"
+                className="form-control"
+                value=""
+              />
+            </div>
+
+            <div className="form-group">
+              <input
+                type="text"
+                name="temperature"
+                className="form-control"
+                placeholder="temperature ° "
+                value=""
+              />
+            </div>
+
+            <div className="form-group">
+              <textarea
+                name="txtMsg"
+                className="form-control"
+                placeholder="Your Message *"
+                style={{ width: "100%", height: "150px" }}
+              ></textarea>
+            </div>
+            
+            <div className="form-group">
+              <input
+                type="submit"
+                name="btnSubmit"
+                className="btnContact"
+                value="Send Message"
+              />
+            </div>
+          </div>
+         
+
+          
+        </div>
+      </form>
+    </div>

@@ -1,0 +1,5 @@
+package tn.gestionplanteetstock.spring.Entities;
+
+public class Humidity {
+
+}

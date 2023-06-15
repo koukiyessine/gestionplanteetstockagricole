@@ -1,0 +1,9 @@
+package tn.gestionplanteetstock.spring.Controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class quantiteeauController {
+
+	
+}

@@ -1,0 +1,5 @@
+package tn.gestionplanteetstock.spring.Repository;
+
+public class WeatherRepository {
+
+}

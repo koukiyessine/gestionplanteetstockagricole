@@ -1,0 +1,72 @@
+.registre {
+  padding: 30px;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.registre form {
+  background-color: rgba(168, 197, 181, 0.389);
+  max-width: 800px;
+  margin-left: 13rem;
+  padding: 50px 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top: 40px;
+  border-bottom: 30px;
+  box-shadow: 90px 90px 90px 90px rgba(0.11, 0.17, 0.11,0.11);
+}
+
+.registre .textt h1 {
+  text-align: center;
+  background-color: none;
+  color: #000000;
+  margin-top: 0.02rem;
+  margin-bottom: 50px;
+}
+
+.registre .paper {
+  border-radius: 20px;
+  margin-bottom: 25px;
+  padding: 10px 50px;
+  opacity: 0.8;
+  width: 30rem;
+}
+
+.registre .createcompte{
+  border-radius: 75px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5791ff;
+  border: none;
+  color: rgb(9, 6, 6);
+  margin-top: -0.5px;
+  margin-right: 65px;
+  margin-left: 95px;
+  
+}
+
+
+.registre .createcompte:hover {
+  background-color: #008cba;
+  color: rgb(181, 22, 22);
+}
+
+@media screen and (max-width: 800px) {
+  .registre form {
+    padding: 50px;
+  }
+
+  .registre .paper {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .registre .createcompte {
+    margin: 50px auto;
+  }
+}

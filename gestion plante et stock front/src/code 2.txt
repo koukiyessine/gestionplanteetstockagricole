@@ -1,0 +1,228 @@
+Rapportplante.js:
+
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import "./Rapportplante.css";
+
+function Rapport() {
+  
+  const [nomdeplante, setnomdeplante] = useState("");
+  const [etatdesante, setetatdesante] = useState("");
+  const [typedesol , settypedesol] = useState("");
+  const [niveaueauph, setniveaueauph] = useState("");
+  const [humidite, sethumidite] = useState("");
+  const [date, setdate] = useState("");
+  const [temperature, settemperature] = useState("");
+  const [txtMsg, settxtMsg] = useState("");
+
+  function handlenomdeplanteChange(event) {
+    setnomdeplante(event.target.value);
+  }
+
+  function handleetatdesanteChange(event) {
+    setetatdesante(event.target.value);
+  }
+
+  function handletypedesolChange(event) {
+    settypedesol(event.target.value);
+  }
+
+  function handleniveaueauphChange(event) {
+    setniveaueauph(event.target.value);
+  }
+
+  function handlehumiditeChange(event) {
+    sethumidite(event.target.value);
+  }
+
+  function handledateChange(event) {
+    setdate(event.target.value);
+  }
+
+  function handletemperatureChange(event) {
+    settemperature(event.target.value);
+  }
+
+  function handletxtMsgChange(event) {
+    settxtMsg(event.target.value);
+  }
+
+  return (
+    <div className="container contact-form">
+    <div className="contact-image">
+    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <form method="post">
+      <h3>Rapport</h3>
+      <div className="row">
+        <div className="col-md-6">
+          <div className="form-group">
+            <input
+              type="text"
+              name="Nom de plante"
+              className="form-control"
+              placeholder="Nom de plante"
+              value={nomdeplante} onChange={handlenomdeplanteChange}/>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="etat de sante"
+              className="form-control"
+              placeholder="etat de sante "
+              value={etatdesante} onChange={handleetatdesanteChange}/>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="text"
+              name="type de sol"
+              className="form-control"
+              placeholder="type de sol "
+              value={typedesol} onChange={handletypedesolChange}/>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="niveaueau ph"
+              className="form-control"
+              placeholder="niveau d'eau ph "
+              value={niveaueauph} onChange={handleniveaueauphChange}/>
+          
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="humidite"
+              className="form-control"
+              placeholder="humidite ° "
+              value={humidite} onChange={handlehumiditeChange}/>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="date"
+              name="date"
+              className="form-control"
+              placeholder="1/11/2022 "
+              value={date} onChange={handledateChange}/>
+          </div>
+
+
+          <div className="form-group">
+            <input
+              type="text"
+              name="temperature"
+              className="form-control"
+              value={temperature} onChange={handletemperatureChange}/>
+          </div>
+
+
+
+          <div className="form-group">
+            <textarea
+              name="txtMsg"
+              className="form-control"
+              placeholder="Your Message *"
+              style={{ width: "100%", height: "150px" }}
+              value={txtMsg} onChange={handletxtMsgChange}
+            />
+          </div>
+          
+          <div className="form-group">
+           <Link path="/Rapportplante"><input
+              type="submit"
+              name="btnSubmit"
+              className="btnContact"
+              defaultValue="envoyer"
+            />  </Link>
+
+            <input
+              type="reset"
+              name="btnreset" 
+              className="btnContact"
+              defaultValue="Annuler"
+            />
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  );
+}
+
+export default Rapport;
+
+
+Rapportplante.css
+
+body{
+   
+    background-image: url("pexels-mark-stebnicki-2749165.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: unset;
+}
+.contact-form{
+    background-color: #0d1340;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    margin-left: 16%;
+    width: 65%;
+    opacity: 0.9;
+    border: 5%;
+    box-shadow:5px;
+}
+
+.contact-form .form-control{
+    border-radius:0.3rem;
+    padding-bottom:2%;
+    margin-top: 7px;
+    margin-left:0.01rem;
+    width:90%;
+}
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: 0.09%;
+    transform: rotate(29deg);
+}
+.contact-form form{
+    padding: 14%;
+}
+.contact-form form .row{
+    margin-bottom: -7%;
+}
+.contact-form h3{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+.contact-form .btnContact {
+    width: 30%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.8%;
+    background: #000000;
+    font-weight: 900;
+    color: hwb(0 99% 0%);
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 75px;
+}
+
+.contact-form .btnContact:hover{
+    background-color: #5bc05b;
+    box-shadow: 0 5px #010101;
+    transform: translateY(4px);
+  }
+
+
+

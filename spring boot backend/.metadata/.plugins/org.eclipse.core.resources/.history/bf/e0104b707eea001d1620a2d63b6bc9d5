@@ -1,0 +1,61 @@
+package tn.gestionplanteetstock.spring.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tn.gestionplanteetstock.spring.Entities.Produit;
+import tn.gestionplanteetstock.spring.Repository.ProduitRepository;
+
+@Service
+public class ProduitService  implements IProduitService {
+
+	
+@Autowired
+ProduitRepository prodrep;
+
+
+
+
+@Override
+public Produit addProduit(Produit p) {
+	// TODO Auto-generated method stub
+	return prodrep.save(p);
+}
+
+
+@Override
+public String addProduitbyexistance(Produit p) {
+	// TODO Auto-generated method stub
+	
+	String ch="";
+	if(prodrep.existsBynomproduit(p.getNomproduit()) && prodrep.existsByreferenceproduit(p.getReferenceproduit()) && 
+			prodrep.existsByquantitealerte(p.getQuantitealerte())&& prodrep.existsByquantitetotal(p.getQuantitetotal())) {
+		ch="les champs suivante already existe dans bd !!";
+	}
+	else
+	{
+		prodrep.save(p);
+		ch="les champs suivante already  ajouter dans bd !!";
+	}
+	
+	return ch;
+}
+
+
+@Override
+public Produit UpdateProduit(Produit p, Long IdProduit) {
+	// TODO Auto-generated method stub
+	
+	Produit pl=prodrep.findById(IdProduit).get();
+	pl.setIdproduit(p.getIdproduit());
+	pl.setReferenceproduit(p.getReferenceproduit());
+	pl.setQuantitetotal(p.getQuantitetotal());
+	pl.setQuantitealerte(p.getQuantitealerte());
+
+	
+	prodrep.save(pl);
+	
+	return pl;
+}
+
+
+}

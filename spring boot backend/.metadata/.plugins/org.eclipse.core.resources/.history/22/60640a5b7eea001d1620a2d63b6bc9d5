@@ -1,0 +1,11 @@
+package tn.gestionplanteetstock.spring.Service;
+
+import tn.gestionplanteetstock.spring.Entities.Produit;
+
+public interface IProduitService {
+
+	public Produit addProduit(Produit p);
+    public  String addProduitbyexistance(Produit p);
+	public Produit UpdateProduit(Produit p, Long idProduit);
+
+}

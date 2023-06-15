@@ -1,0 +1,66 @@
+package tn.gestionplanteetstock.spring.Entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Humidity {
+	
+	@Id     
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	private Long IdHumd;
+	private int Value;
+	
+	
+	public Long getIdHumd() {
+		return IdHumd;
+	}
+	
+	public void setIdHumd(Long idHumd) {
+		this.IdHumd = idHumd;
+	}
+	
+	public float getValue() {
+		return Value;
+	}
+	
+	public void setValue(int value) {
+		this.Value = value;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Humidity [IdHumd=" + IdHumd + ", Value=" + Value + "]";
+	}
+	
+	
+	public Humidity(Long idHumd, int value) {
+		super();
+		this.IdHumd = idHumd;
+		this.Value = value;
+	}
+	
+	
+	public Humidity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+/*
+	public String getSoilMoisture() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+*/
+
+
+	
+	
+	
+	
+	
+
+}

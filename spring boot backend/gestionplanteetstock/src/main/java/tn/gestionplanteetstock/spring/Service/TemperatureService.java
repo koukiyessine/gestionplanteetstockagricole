@@ -1,0 +1,25 @@
+package tn.gestionplanteetstock.spring.Service;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.gestionplanteetstock.spring.Entities.Temperature;
+//import tn.gestionplanteetstock.spring.Repository.PlanteProjection;
+import tn.gestionplanteetstock.spring.Repository.TemperatureRepository;
+
+
+
+@Service
+public class TemperatureService  implements ITemperatureservice{
+
+	
+	@Autowired
+	TemperatureRepository temprep;
+	
+ 	public List<Temperature> getAlltemperature() {
+ 	    return (List<Temperature>) temprep.findAll();
+ 	}
+}

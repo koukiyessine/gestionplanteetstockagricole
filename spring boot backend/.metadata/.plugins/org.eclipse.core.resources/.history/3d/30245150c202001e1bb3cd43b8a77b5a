@@ -1,0 +1,10 @@
+package tn.gestionplanteetstock.spring.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import tn.gestionplanteetstock.spring.Entities.Humidity;
+import tn.gestionplanteetstock.spring.Entities.Weather;
+
+public interface weatherRepository extends CrudRepository<Weather, Long> {
+
+}

@@ -1,0 +1,5 @@
+package tn.gestionplanteetstock.spring.Service;
+
+public class HumidityService {
+
+}

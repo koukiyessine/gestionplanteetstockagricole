@@ -1,0 +1,67 @@
+.visites{
+ margin: 9rem 7rem;
+ color: #2a2a2a;   
+}
+
+.visites h1{
+ font-size: 3rem;
+}
+
+.visitescard{
+ margin-top: 3rem;
+ display: flex;
+ justify-content: space-between; 
+}
+
+.t-card{
+  width: 29%;
+  text-align: start;
+  box-shadow: 0px 3px 25px 2px rgba(1,1,1,0);
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 3rem .6rem; 
+  border:3px;
+}
+
+.t-image{
+  height: 200px;
+  overflow: hidden;
+  border-radius: 7px;
+
+}
+
+.t-image img{
+    width: 100%;
+    height: 100%;
+    overflow: 0.3s ease-in-out;
+    border-radius: 7px;
+  
+}
+
+.t-image:hover img{
+  transform: scale(1.3);
+  
+  }
+
+
+.t-card h4{
+    font-size: 1.3rem;
+    padding: .9rem 0 .2rem 0;
+
+}
+
+@media screen and (max-width:850px){
+    .visites{
+     margin: 4rem 2rem;
+    }
+
+    .visitescard{
+       flex-direction: column;
+    }
+
+    .t-card{
+      width: 100%;
+     margin-bottom: 1.5rem;
+    }
+    
+}

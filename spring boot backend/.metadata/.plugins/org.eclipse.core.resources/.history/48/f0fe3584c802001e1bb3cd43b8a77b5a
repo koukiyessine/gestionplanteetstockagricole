@@ -1,0 +1,32 @@
+package tn.gestionplanteetstock.spring.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//import tn.gestionplanteetstock.spring.Entities.Humidity;
+import tn.gestionplanteetstock.spring.Entities.Weather;
+import tn.gestionplanteetstock.spring.Repository.WeatherRepository;
+
+@Service
+public class WeatherService implements IWeatherService {
+	
+	@Autowired
+	WeatherRepository weatherrep;
+
+	public List<Weather> getAllWeather() {
+	    List<Weather> allWeather = (List<Weather>) weatherrep.findAll();
+
+	    // Filtrer les variables dont la valeur n'est pas égale à zéro
+	    List<Weather> filteredWeather = allWeather.stream()
+	            .filter(weather -> weather.getVariable() != 0)
+	            .collect(Collectors.toList());
+
+	    return filteredWeather;
+	}
+
+	
+
+}

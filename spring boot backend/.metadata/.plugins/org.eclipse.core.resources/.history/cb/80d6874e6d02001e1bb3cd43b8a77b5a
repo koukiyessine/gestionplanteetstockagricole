@@ -1,0 +1,7 @@
+package tn.gestionplanteetstock.spring.Repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface quantiteeauRepository extends CrudRepository<quantiteeau, long>{
+
+}

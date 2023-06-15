@@ -1,0 +1,68 @@
+.registrationn-formm {
+  padding: 60px;
+  background-image: url("pexels-vincenzo-malagoli-1211772.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.registrationn-formm form {
+  background-color: rgba(136, 109, 109, 0.389);
+  max-width: 800px;
+  margin: auto;
+  padding: 50px 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top: 30px;
+  border-bottom: 30px;
+  box-shadow: 50px 50px 50px rgba(0, 0, 0, 0.075);
+}
+
+.registrationn-formm .formm-ttext h1 {
+  text-align: center;
+  background-color: none;
+  color: #5791ff;
+  margin-top: 0.02rem;
+  margin-bottom: 50px;
+}
+
+.registrationn-formm .itemm {
+  border-radius: 20px;
+  margin-bottom: 25px;
+  padding: 10px 50px;
+  opacity: 0.8;
+  width: 30rem;
+}
+
+.registrationn-formm .createaccountt {
+  border-radius: 75px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5791ff;
+  border: none;
+  color: rgb(9, 6, 6);
+  margin-top: -10px;
+  margin-right: 155px;
+  
+}
+
+.registrationn-formm .createaccountt:hover {
+  background-color: #008cba;
+  color: rgb(181, 22, 22);
+}
+
+@media screen and (max-width: 800px) {
+  .registrationn-formm form {
+    padding: 50px;
+  }
+
+  .registrationn-formm .itemm {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .registrationn-formm .createaccountt {
+    margin: 50px auto;
+  }
+}

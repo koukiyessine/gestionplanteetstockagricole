@@ -1,0 +1,44 @@
+package tn.gestionplanteetstock.spring.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import tn.gestionplanteetstock.spring.Entities.Temperature;
+import tn.gestionplanteetstock.spring.Repository.TemperatureRepository;
+
+@RestController
+@RequestMapping("/api")
+//@CrossOrigin(origins = "*") // Autoriser toutes les origines (à adapter en fonction de vos besoins de sécurité)
+
+public class TemperatureController {
+	
+	@Autowired
+	TemperatureRepository temprep;
+	
+	
+	 @GetMapping("/receiveData")
+	    public ResponseEntity<String> receiveData(@RequestBody Temperature value) {
+		 temprep.save(value);
+	        return ResponseEntity.ok("Données enregistrées avec succès !");  
+	        
+	 }
+	 
+    /*@PostMapping("/addTemperature")
+    public ResponseEntity<String> addTemperature(@RequestBody Temperature temperature) {
+        // Effectuez les opérations souhaitées avec les données de température
+        float temperatureValue = temperature.getValue();
+        
+        // Exemple de log pour vérifier la réception des données
+        System.out.println("Température reçue : " + temperatureValue);
+
+        // Vous pouvez enregistrer les données de température dans une base de données, les traiter, etc.
+
+        return ResponseEntity.ok("Données de température reçues avec succès");
+    }*/
+}

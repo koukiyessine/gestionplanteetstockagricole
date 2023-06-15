@@ -1,0 +1,24 @@
+package tn.gestionplanteetstock.spring.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.gestionplanteetstock.spring.Entities.Humidity;
+//import tn.gestionplanteetstock.spring.Entities.Temperature;
+import tn.gestionplanteetstock.spring.Repository.HumidityRepository;
+
+@Service 
+public class HumidityService implements IHumidityService{
+
+	@Autowired
+	HumidityRepository humidrep;
+	
+	
+ 	public List< Humidity> getAlltemperature(){
+ 	    return (List< Humidity>) humidrep.findAll();
+ 	}
+	
+	
+}

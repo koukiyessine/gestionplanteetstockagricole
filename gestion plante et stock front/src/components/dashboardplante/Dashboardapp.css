@@ -1,0 +1,43 @@
+.APP{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tete{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 45px 14px 8px ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.SideMenuAndPage{
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.05) ;
+
+}
+
+
+.Baspage{
+height: 50px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+border-top: 1px solid rgba(0, 0, 0, 0.15);
+
+}
+
+.Side_menuu{
+    height: 100%;
+    padding-top:5px;
+}
+
+.Page_contentt{
+    padding-left: 12px;
+}
